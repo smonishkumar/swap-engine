@@ -1,4 +1,4 @@
-const API_BASE_URL = 'http://localhost:8000/api';
+const API_BASE_URL = `${process.env.REACT_APP_API_URL}/api`;
 
 class ApiService {
   constructor() {
@@ -6,7 +6,7 @@ class ApiService {
   }
 
   getAuthHeaders() {
-    const token = localStorage.getItem('access_token');
+    const token = localStorage.getItem('access') || localStorage.getItem('access_token');
     return {
       'Content-Type': 'application/json',
       ...(token && { 'Authorization': `Bearer ${token}` })
@@ -50,8 +50,8 @@ class ApiService {
     });
     
     if (response.access) {
-      localStorage.setItem('access_token', response.access);
-      localStorage.setItem('refresh_token', response.refresh);
+      localStorage.setItem('access', response.access);
+      localStorage.setItem('refresh', response.refresh);
     }
     
     return response;
