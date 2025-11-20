@@ -1,1 +1,19 @@
 node_modules
+# Python
+__pycache__/
+*.pyc
+
+# Django
+db.sqlite3
+media/
+
+# Node
+node_modules/
+build/
+
+# Virtual Environment
+venv/
+backend/venv/
+
+# React environment files
+.env
