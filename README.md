@@ -72,9 +72,6 @@ Or use the convenience script:
 ### Frontend Setup (React)
 
 1. Navigate to project root:
-```bash
-cd /Users/kunalkakkar/Desktop/SWAP
-```
 
 2. Install dependencies:
 ```bash
